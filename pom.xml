@@ -79,7 +79,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<applicationName>jkins-qa-api</applicationName>
+						<applicationName>jkinsfirst-qa-api</applicationName>
 						<environment>Qa</environment>
 						<properties>
 							<env>Qa</env>
