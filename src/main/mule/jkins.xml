@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f482783b-3e07-4d22-a6ab-9194c2632f2e" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="09a875f4-8482-40ee-9fdd-7259a518638e" file="${env}.yaml" />
+	<flow name="jkinsFlow" doc:id="de718f4e-966f-4cf6-98f9-657ebae54596" >
+		<http:listener doc:name="Listener" doc:id="f905ade7-0f63-4bfc-b86e-42d0975980dd" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="a3f59692-1b4d-4daa-8c04-e58c85f17c1b" message='#["Welcome to jenkins"]'/>
+	</flow>
+</mule>
