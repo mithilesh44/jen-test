@@ -18,7 +18,7 @@ pipeline {
      stage('Development') {
       
       steps {
-            bat 'mvn -U -V -e -B   -DskipTests -PQa -Dusername=mithilesh107 -Dpassword=Mith@12345678 -DmuleDeploy
+           bat 'mvn -U -V -e -B -gs %M2SETTINGS%  -DskipTests -PQa -Dusername=mithilesh107 -Dpassword=Mith@12345678 -DmuleDeploy
               }
     }
   
