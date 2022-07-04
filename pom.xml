@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
@@ -17,83 +15,84 @@
 
 		<app.runtime>4.4.0-20220221</app.runtime>
 		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
+		<munit.version>2.3.9</munit.version>
 	</properties>
-<profiles>
-<profile>
-<id>Dev</id>
-<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployment>
-						<applicationName>jkins-dev-api</applicationName>
-						<environment>Dev</environment>
-						<properties>
-							<env>dev</env>
-							<anypoint.platform.client_id>ebcbdd0698c64985806956cccec8e3c5</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>9b55879F8C3a41a3914b6C37173daBdB</anypoint.platform.client_secret>
+	<profiles>
+		<profile>
+			<id>Dev</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<version>${mule.maven.plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<cloudHubDeployment>
+								<applicationName>jkins-dev-api</applicationName>
+								<environment>Dev</environment>
+								<properties>
+									<env>dev</env>
+									<anypoint.platform.client_id>ebcbdd0698c64985806956cccec8e3c5</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>9b55879F8C3a41a3914b6C37173daBdB</anypoint.platform.client_secret>
 								</properties>
-					</cloudHubDeployment>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-</profile>
-<profile>
-<id>Prod</id>
-<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployment>
-						<applicationName>jkins-prd-api</applicationName>
-						<environment>Prod</environment>
-						<properties>
-							<env>prod</env>
-							<anypoint.platform.client_id>f7b2714842a048078b19771addf35545</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>6d350568E1724612B7d505E85d26D800</anypoint.platform.client_secret>
+							</cloudHubDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>Prod</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<version>${mule.maven.plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<cloudHubDeployment>
+								<applicationName>jkins-prd-api</applicationName>
+								<environment>Prod</environment>
+								<properties>
+									<env>prod</env>
+									<anypoint.platform.client_id>f7b2714842a048078b19771addf35545</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>6d350568E1724612B7d505E85d26D800</anypoint.platform.client_secret>
 								</properties>
-					</cloudHubDeployment>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+							</cloudHubDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
 
-</profile>
-<profile>
-<id>Qa</id>
-<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployment>
-						<applicationName>jkinsfirst-qa-api</applicationName>
-						<environment>Qa</environment>
-						<properties>
-							<env>Qa</env>
-							<anypoint.platform.client_id>4806fb0863414e7cba2ba2ba45879de4</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>d467aEc9E39b4bf7A97eCC92d034E9E5</anypoint.platform.client_secret>
-							</properties>
-					</cloudHubDeployment>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+		</profile>
+		<profile>
+			<id>Qa</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<version>${mule.maven.plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<cloudHubDeployment>
+								<applicationName>jkinspipeline-qa-api</applicationName>
+								<environment>Qa</environment>
+								<properties>
+									<env>Qa</env>
+									<anypoint.platform.client_id>4806fb0863414e7cba2ba2ba45879de4</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>d467aEc9E39b4bf7A97eCC92d034E9E5</anypoint.platform.client_secret>
+								</properties>
+							</cloudHubDeployment>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
 
-</profile>
-</profiles>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
@@ -124,6 +123,29 @@
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+							<goal>coverage-report</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+						<formats>
+							<format>html</format>
+						</formats>
+					</coverage>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -139,6 +161,26 @@
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.2</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>2.3.9</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>2.3.9</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
